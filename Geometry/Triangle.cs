@@ -68,7 +68,7 @@ public class Triangle : Shape2D
             {
                 return TriangleSideType.Equilaterial;
             }
-            if (ss2 == ss3)
+            if (ss1 == ss2 || ss2 == ss3 || ss1 == ss3)
             {
                 return TriangleSideType.Isoceles;
             }
