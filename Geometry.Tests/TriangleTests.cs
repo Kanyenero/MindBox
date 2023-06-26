@@ -1,6 +1,4 @@
-﻿using Mindbox.Geometry.Tests;
-
-namespace MindBox.Geometry.Tests;
+﻿namespace MindBox.Geometry.Tests;
 
 public class TriangleTests : Shape2DTests
 {

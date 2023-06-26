@@ -1,6 +1,4 @@
-using MindBox.Geometry;
-
-namespace Mindbox.Geometry.Tests;
+namespace MindBox.Geometry.Tests;
 
 public abstract class Shape2DTests
 {
