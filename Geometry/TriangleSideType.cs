@@ -13,7 +13,7 @@ public enum TriangleSideType
     /// <summary>
     /// Равнобедренный треугольник.
     /// </summary>
-    Isoceles,
+    Isosceles,
 
     /// <summary>
     /// Треугольник, у которого нет равных сторон.
