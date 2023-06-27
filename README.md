@@ -13,6 +13,9 @@
 
 #### Заметки к заданию 2
 Диаграмма БД
+
 ![database diagram](./doc/db_diagram.png)
+
 Результат выполнения запроса
+
 ![query result](./doc/query_result.png)
