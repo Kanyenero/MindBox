@@ -33,6 +33,7 @@ public class TriangleTests : Shape2DTests
 
     [Theory]
     [InlineData(5, 5, 5)]
+    [InlineData(5, 5, 3)]
     public void Triangle_IsRight_Returns_False(double s1, double s2, double s3)
     {
         // Arrange

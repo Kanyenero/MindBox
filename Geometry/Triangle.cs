@@ -70,7 +70,7 @@ public class Triangle : Shape2D
             }
             if (ss1 == ss2 || ss2 == ss3 || ss1 == ss3)
             {
-                return TriangleSideType.Isoceles;
+                return TriangleSideType.Isosceles;
             }
 
             return TriangleSideType.Scalene;
@@ -89,15 +89,23 @@ public class Triangle : Shape2D
     {
         get
         {
-            if (SideType == TriangleSideType.Scalene || SideType == TriangleSideType.Isoceles)
+            if (SideType == TriangleSideType.Scalene)
             {
                 var sides = new[] { _side12, _side23, _side31 };
-                var hyp = sides.Max();
-                var legs = sides.Where(side => side < hyp).ToArray();
-                var leg1 = legs[0];
-                var leg2 = legs[1];
+                var @base = sides.Max();
+                var ribs = sides.Where(s => s < @base).ToArray();
+                var rib1 = ribs[0];
+                var rib2 = ribs[1];
 
-                return hyp * hyp == leg1 * leg1 + leg2 * leg2;
+                return @base * @base == rib1 * rib1 + rib2 * rib2;
+            }
+            if (SideType == TriangleSideType.Isosceles)
+            {
+                var sides = new[] { _side12, _side23, _side31 };
+                var rib = sides.GroupBy(s => s).Single(s => s.Count() == 2).First();
+                var @base = sides.Single(s => s != rib);
+
+                return @base * @base == 2 * rib * rib;
             }
 
             return false;
